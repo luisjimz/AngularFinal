@@ -6,19 +6,24 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './components/shared/shared.module';
 import { ClientesModule } from './components/clientes/clientes.module';
 import { HomeModule } from './components/home/home.module';
-import { AddressComponent } from './components/address/address.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { APP_ROUTING } from './app.routes';
+import { AddressModule } from './components/address/address.module';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AddressComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     ClientesModule,
-    HomeModule
+    HomeModule,
+    AddressModule,
+    BrowserAnimationsModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AddressComponent } from './address.component';
+
+import { MatTableModule, MatCardModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { AddressTableComponent } from './address-table/address-table.component';
 
 @NgModule({
   declarations: [
-    AddressComponent
+    AddressTableComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatTableModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports: [
-    AddressComponent
+    AddressTableComponent
   ]
 })
 export class AddressModule { }

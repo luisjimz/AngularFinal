@@ -1,10 +1,12 @@
-import { iDatabaseObject } from '../../shared/entities/IDatabaseObject';
+import { iDatabaseObject } from './IDatabaseObject';
 
 interface IAddress extends iDatabaseObject{
+    id : number,
     street : string,
     city : string,
     state : string,
-    zip : number
+    zip : number,
+    creationDate : Date;
 }
 
 export class Address implements IAddress{
@@ -13,4 +15,5 @@ export class Address implements IAddress{
     city: string = '';
     state: string = '';
     zip: number = 0;
+    creationDate: Date = new Date();
 }

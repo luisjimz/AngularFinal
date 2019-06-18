@@ -1,38 +1,47 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClientesListComponent } from './clientes-list/clientes-list.component';
 import { ClientesFormComponent } from './clientes-form/clientes-form.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateModule, MatGridListModule, MatExpansionModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { ClientesTableComponent } from './clientes-table/clientes-table.component';
 
 
 @NgModule({
   declarations: [
-    ClientesListComponent, 
-    ClientesFormComponent
+    ClientesFormComponent,
+    ClientesTableComponent,
+    
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule,
     MatDialogModule,
     MatButtonModule,
-    MatInputModule, 
+    MatInputModule,
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule,
+    MatGridListModule,
+    MatExpansionModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
 
   ],
-  exports:[
-    ClientesListComponent, 
-    ClientesFormComponent
+  exports: [
+    ClientesFormComponent,
+    ClientesTableComponent
   ]
 })
 export class ClientesModule { }
