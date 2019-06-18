@@ -9,7 +9,6 @@ import { HomeModule } from './components/home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { APP_ROUTING } from './app.routes';
 import { AddressModule } from './components/address/address.module';
-import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [

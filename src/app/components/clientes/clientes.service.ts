@@ -44,8 +44,8 @@ export class ClientesService {
     temp.dni = this.getDni();
     temp.birthDate = cliente.value.birthDate;
     temp.phone = cliente.value.phone;
+    temp.age = this.calculateAge(temp.birthDate);
     this.clienteList.push(temp);
-    console.log(temp);
   }
 
   getClientes(): Cliente[] {    
@@ -95,6 +95,7 @@ export class ClientesService {
     let foo = new Cliente();
     let headers = Object.getOwnPropertyNames(foo);
     // headers.push(this.extraHeader[0]);
+    headers.push("edit");
     return headers;
   }
 

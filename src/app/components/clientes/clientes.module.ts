@@ -11,12 +11,14 @@ import { MatInputModule, MatFormFieldModule, MatDatepickerModule, MatNativeDateM
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { ClientesTableComponent } from './clientes-table/clientes-table.component';
+import { DniFormatPipe } from '../shared/pipes/dni-format.pipe';
 
 
 @NgModule({
   declarations: [
     ClientesFormComponent,
     ClientesTableComponent,
+    DniFormatPipe
     
   ],
   imports: [
@@ -41,7 +43,8 @@ import { ClientesTableComponent } from './clientes-table/clientes-table.componen
   ],
   exports: [
     ClientesFormComponent,
-    ClientesTableComponent
+    ClientesTableComponent,
+    DniFormatPipe
   ]
 })
 export class ClientesModule { }

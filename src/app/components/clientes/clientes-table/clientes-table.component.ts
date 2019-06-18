@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTable } from '@angular/material';
 import { ClientesTableDataSource, ClientesTableItem } from './clientes-table-datasource';
 import { ClientesService } from '../clientes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'final-clientes-table',
@@ -20,8 +21,8 @@ export class ClientesTableComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     this.dataSource = new ClientesTableDataSource(this.clientesService);
-    this.displayedColumns = this.clientesService.getTableHeader();
-    console.log(this.displayedColumns);
+    console.log(this.clientesService.getTableHeader());
+    this.displayedColumns = this.clientesService.getTableHeader();  
   }
 
   ngAfterViewInit() {
@@ -30,7 +31,14 @@ export class ClientesTableComponent implements AfterViewInit, OnInit {
     this.table.dataSource = this.dataSource;
   }
 
-  constructor(private clientesService : ClientesService){
+  editClient(id:any){
+    this.router.navigate(['/client-edit/'+id]);
+  }
+
+  constructor(
+    private clientesService : ClientesService,
+    private router : Router)
+    {
     
   }
 }
